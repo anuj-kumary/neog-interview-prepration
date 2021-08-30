@@ -7,6 +7,40 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <input id="input-txt" type="text">
+    <button id="heading1">h1</button>
+    <button id="heading2">h2</button>
+    <button id="heading3">h3</button>
+    <div id="output"></div>
+
+    <script>
+        const inputTxt = document.querySelector('#input-txt');
+
+        const heading1 = document.querySelector("#heading1");
+        const heading2 = document.querySelector("#heading2");
+        const heading3 = document.querySelector("#heading3");
+        const output = document.querySelector("#output")
+
+        heading1.addEventListener('click',()=>{
+            var h = document.createElement("h1");
+            var text = document.createTextNode(inputTxt.value);
+            h.appendChild(text)
+            output.appendChild(h);
+
+        })
+        heading2.addEventListener('click',()=>{
+            var h = document.createElement('h2');
+            var text = document.createTextNode(inputTxt.value);
+            h.appendChild(text);
+            output.appendChild(h);
+        })
+
+        heading3.addEventListener('click',()=>{
+            var h = document.createElement('h3');
+            var text = document.createTextNode(inputTxt.value);
+            h.appendChild(text);
+            output.appendChild(h);
+        })
+    </script>
 </body>
 </html>
