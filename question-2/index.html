@@ -1,12 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    
+    <input type="text" id="input-txt">
+    <button id="font-increase">+</button>
+    <button id="font-decrement">-</button>
+    <div id="output"></div>
+
+    <script>
+        const inputTxt = document.querySelector("#input-txt");
+
+        const fontSizeIncrement = document.querySelector('#font-increase');
+
+        const fontSizeDecrement = document.querySelector('#font-decrement');
+
+        const output = document.querySelector('#output');
+        let size = 15;
+
+        fontSizeIncrement.addEventListener('click', () => {
+            let userText = inputTxt.value;
+            output.innerText = userText
+            size = size + 2;
+            output.style.fontSize = size + "px";
+        })
+
+        fontSizeDecrement.addEventListener('click', () => {
+            let userText = inputTxt.value;
+            output.innerText = userText
+            size = size - 2;
+            output.style.fontSize = size + "px";
+        })
+    </script>
 </body>
+
 </html>
