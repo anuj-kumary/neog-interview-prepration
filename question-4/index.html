@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="input-txt">
+    <button id="red">Red</button>
+    <button id="green">Green</button>
+    <button id="blue">Blue</button>
+    <div id="output"></div>
+
+    <script>
+        const inputTxt = document.querySelector("#input-txt");
+
+        const redBtn = document.querySelector("#red");
+        const greenBtn = document.querySelector("#green");
+        const blueBtn = document.querySelector("#blue");
+        const output = document.querySelector('#output');
+
+        redBtn.addEventListener('click', () => {
+            output.innerText = inputTxt.value;
+            output.style.color = "red";
+        });
+
+        greenBtn.addEventListener('click', () => {
+            output.innerText = inputTxt.value;
+            output.style.color = "green"
+        });
+
+        blueBtn.addEventListener('click', () => {
+            output.innerText = inputTxt.value;
+            output.style.color = "blue"
+        });
+    </script>
+</body>
+
+</html>
