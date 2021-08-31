@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <div id="output"></div>
 
@@ -13,25 +15,37 @@
         const output = document.querySelector("#output");
 
         var obj1 = {
-            name : "Ram",
-            age : 25,
-            yuga : "Treta"
+            name: "Ram",
+            age: 25,
+            power: 2500,
+            yuga: "Treta"
         }
 
         var obj2 = {
-            name : "Krishna",
-            age : 31,
-            yuga : "Dwapar"
+            name: "Krishna",
+            age: 31,
+            power: 2325,
+            yuga: "Dwapar"
         }
 
-        function whoHaveAMoreAge( obj1 , obj2 ){
-            if(obj1.age > obj2.age){
+        function whoHaveAMoreAge(obj1, obj2) {
+            if (obj1.age > obj2.age) {
                 console.log(`${obj1.name} is bigger than ${obj2.name}`)
-            }else{
+            } else {
                 console.log(`${obj2.name} is bigger than ${obj1.name}`)
             }
         }
-        whoHaveAMoreAge( obj1 , obj2 )
+
+        function whoHaveAMorePower(obj1, obj2) {
+            if (obj1.power > obj2.power) {
+                console.log(`${obj1.name} have a more power than ${obj2.name}`)
+            } else {
+                console.log(`${obj2.name} have a more power than ${obj1.name}`);
+            }
+        }
+        whoHaveAMoreAge(obj1, obj2)
+        whoHaveAMorePower(obj1, obj2)
     </script>
 </body>
+
 </html>
