@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Checker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <input type="text" id="input-txt" placeholder="Enter the string" required>
+    <button id="check-btn">Submit</button>
+    <div id="output"></div>
+
+
+    <script>
+        const inputTxt = document.querySelector("#input-txt");
+        const checkBtn = document.querySelector('#check-btn');
+        const output = document.querySelector('#output');
+
+        function passwordChecker(){
+            let inputValue = inputTxt.value;
+            let lengths = inputValue.length;
+            if(lengths >= 10){
+                output.innerText = "Success"
+                inputTxt.style.border = "1px solid green"
+            }else{
+                output.innerText = 'Sorry!! The Password length is to short'
+                inputTxt.style.border = "1px solid red"
+                checkBtn.disabled = true;
+            }
+           
+        }
+        checkBtn.addEventListener('click', passwordChecker);
+    </script>
+</body>
+</html>
