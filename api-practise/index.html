@@ -21,6 +21,23 @@
 .then(data => console.log(data.joke))
 .catch(err => console.log(err))
 
+//Using fetch with async and await .
+
+async function getData(){
+ try{
+  const responseUrl = await fetch('https://icanhazdadjoke.com/',{
+    headers:{
+      Accept : "application/json",
+    },
+  })
+    const response = await responseUrl.json();
+    const jokes =  await response.joke;
+    console.log(jokes)
+  }
+  catch(error){
+    console.log(error)
+  }
+}
 	</script>
 
 </body>
