@@ -38,6 +38,21 @@ async function getData(){
     console.log(error)
   }
 }
+
+//Learning Promise
+
+const wait = time => new Promise(
+  res => setTimeout(() => res(), time)
+);
+
+wait(200)
+
+.then(() => new Promise(res => res('foo')))
+.then(b => console.log(b))
+.catch(e => console.log(e))
+.then(() => { throw new Error('bar'); })
+
+
 	</script>
 
 </body>
