@@ -21,6 +21,18 @@
 .then(data => console.log(data.joke))
 .catch(err => console.log(err))
 
+let url = "https://goquotes-api.herokuapp.com/api/v1/random?count=100";
+
+fetch(url)
+.then(response => response.json())
+.then((data) => {
+  let number = Math.floor(Math.random()*100)
+  console.log(number)
+  console.log(data.quotes[number].text)
+  })
+.catch(err => console.log(err))
+
+
 //Using fetch with async and await .
 
 async function getData(){
