@@ -21,17 +21,6 @@
 .then(data => console.log(data.joke))
 .catch(err => console.log(err))
 
-let url = "https://goquotes-api.herokuapp.com/api/v1/random?count=100";
-
-fetch(url)
-.then(response => response.json())
-.then((data) => {
-  let number = Math.floor(Math.random()*100)
-  console.log(number)
-  console.log(data.quotes[number].text)
-  })
-.catch(err => console.log(err))
-
 
 //Using fetch with async and await .
 
@@ -71,6 +60,33 @@ const getPromise = new Promise((resolve , reject) =>{
 .catch((e)=>{
   console.log(e)
 })
+
+// fetching quotes api using async and await 
+
+let url = "https://goquotes-api.herokuapp.com/api/v1/random?count=100";
+
+let quote = ""
+
+let randomNumber = Math.floor(Math.random()*100)
+
+btnClick.addEventListener('click', getQuotes)
+
+async function getQuotes(){
+
+ const apiFetching = await fetch(url)
+ let response = await apiFetching.json()
+  quote = await response.quotes[randomNumber].text
+  showOutput()
+}
+
+function showOutput (){
+  let createElements = document.createElement('div')
+  let textsNode = document.createTextNode(quote)
+  createElements.appendChild(textsNode)
+  const quotesGenerator = document.querySelector('#quotes-generator')
+  quotesGenerator.appendChild(createElements);
+}
+
 
 
 	</script>
