@@ -6,8 +6,22 @@
   <title>Twitter</title>
 </head>
 <body>
-  <textarea maxlength="10"  id=""></textarea>
+   <textarea maxlength="15"  id="input-value"></textarea>
   <button id="btn-tweet">Tweet Me!!</button>
+  <div id="tweet-quotes"></div>
+
+    <script>
+      const inputValue = document.querySelector('#input-value')
+      const btnTweet   = document.querySelector('#btn-tweet');
+      const tweetQuotes = document.querySelector("#tweet-quotes")
+      btnTweet.addEventListener('click',()=>{
+        var btn = document.createElement("p");
+        var outputText =  inputValue.value;
+        var textNode = document.createTextNode(outputText);
+        
+        btn.appendChild(textNode);
+        tweetQuotes.appendChild(btn);
+      })
   
 </body>
 </html>
