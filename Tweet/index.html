@@ -13,7 +13,19 @@
     <script>
       const inputValue = document.querySelector('#input-value')
       const btnTweet   = document.querySelector('#btn-tweet');
-      const tweetQuotes = document.querySelector("#tweet-quotes")
+      const tweetQuotes = document.querySelector("#tweet-quotes");
+
+      inputValue.addEventListener('input',(e)=>{
+       let tweetValue =  e.target.value
+       if(tweetValue.length > 15){
+        btnTweet.disabled = true;
+       }else{
+        btnTweet.disabled = false;
+       }
+      })
+
+
+
       btnTweet.addEventListener('click',()=>{
         var btn = document.createElement("p");
         var outputText =  inputValue.value;
