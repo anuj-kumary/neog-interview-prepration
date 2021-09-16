@@ -1,11 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
 </head>
+
 <body>
+	<input type="date" id="input-dob">
+  <input type="text" id="lucky-Number">
+  <button id="check">Check</button>
+  <div id="output"></div>
+    <script>
+      const inputDob = document.querySelector('#input-dob');
+      const luckyNumber = document.querySelector('#lucky-Number')
+      const checkBtn = document.querySelector('#check');
+      const output = document.querySelector('#output');
+
+      function checkBirthdayIsLuckyOrNot(){
+        let dob = inputDob.value;
+        let replaceHypen = dob.replaceAll('-',"");
+        let sum = 0;
+        for(let index = 0; index < replaceHypen.length; index++){
+          let dobNumber = Number(replaceHypen[index]);
+          sum = sum + dobNumber
+        }
+       if(luckyNumber.value == sum){
+           output.innerText = "You're lucky"
+       }else{
+           output.innerText = "You're Not lucky"
+       }
+      }
+
+
+      checkBtn.addEventListener('click', checkBirthdayIsLuckyOrNot)
+       
   
+    </script>
 </body>
 </html>
