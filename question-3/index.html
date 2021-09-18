@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
+<!-- <body>
     <input id="input-txt" type="text">
     <button id="heading1">h1</button>
     <button id="heading2">h2</button>
@@ -41,6 +41,34 @@
             h.appendChild(text);
             output.appendChild(h);
         })
-    </script>
+    </script> -->
+
+    <input type="text" id="user-input">
+<button id="h1">h1</button>
+<button id="h2">h2</button>
+<button id="h3">h3</button>
+<div id="output"></div>
+
+<script>
+  const output = document.querySelector('#output');
+  const userInput = document.querySelector('#user-input');
+  const heading1 = document.querySelector('#h1');
+  const heading2 = document.querySelector('#h2');
+  const heading3 = document.querySelector('#h3');
+
+  heading1.addEventListener('click', ()=>{
+    let values = userInput.value;
+    output.innerHTML = "<h1>" +values + "</h1>"
+  })
+    heading2.addEventListener('click', ()=>{
+    let values = userInput.value;
+    output.innerHTML = "<h2>" +values + "</h2>"
+  })
+    heading3.addEventListener('click', ()=>{
+    let values = userInput.value;
+    output.innerHTML = "<h3>" +values + "</h3>"
+  })
+
+
 </body>
 </html>
