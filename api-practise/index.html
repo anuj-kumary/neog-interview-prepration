@@ -87,8 +87,26 @@ function showOutput (){
   quotesGenerator.appendChild(createElements);
 }
 
+//Practise try.... and catch
+const output = document.querySelector("#output");
 
+async function fecthApi(){
+try{
+const url = await fetch("https://type.fit/api/quotes")
+if(url.status===404){
+  console.log("Error")
+}else{
+  console.log(url.statusText)
+}
+let response = await url.json();
+console.log(response[0].text)
+  }
+catch(err){
+  console.log(err)
+}
+}
 
+fecthApi()
 	</script>
 
 </body>

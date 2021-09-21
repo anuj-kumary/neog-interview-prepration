@@ -1,13 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
 </head>
+
 <body>
-   <input type="number"  id="input-number">
+	<input type="number"  id="input-number">
     <button id="click">Click</button>
     <div id="output"></div>
+
+
+<script>
+const inputNumber = document.querySelector("#input-number");
+
+const clickBtn = document.querySelector("#click");
+
+clickBtn.addEventListener('click',()=>{
+  let userInput = Number(inputNumber.value);
+  if(userInput%2===0){
+    output.innerText = "Even Number";
+  }else{
+     output.innerText = "Odd Number";
+  }
+})
+</script>
 </body>
 </html>
