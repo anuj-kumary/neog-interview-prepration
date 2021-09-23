@@ -2,30 +2,28 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
 </head>
 
 <body>
-    <div id="output"></div>
-    <script>
-        const output = document.querySelector('#output');
+	<div id="output"></div>
+	<script>
+		const output = document.querySelector('#output');
 
-        async function jokes() {
-            const url = await fetch("response.json")
-            if (url.status === 404) {
-                console.log("Page Not Found")
-                output.innerText = "Page Not Found"
-            } else if (url.status === 401) {
-                console.log("you are not logged in")
-                output.innerText = "you are not logged in"
-            }
-
+        async function textApi(){
+        const url = await fetch("https://jsonplaceholder.typicode.com/dummyUsers")
+        if(url.status === 401){
+          console.log("Not logged In")
         }
-        jokes()
-    </script>
+        else if(url.status === 404){
+          console.log("Not Found")
+  }
+}
+textApi()
+	</script>
 </body>
 
 </html>
