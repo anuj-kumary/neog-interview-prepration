@@ -11,8 +11,6 @@
 	<input type="number"  id="input-number">
     <button id="click">Click</button>
     <div id="output"></div>
-
-
 <script>
 const inputNumber = document.querySelector("#input-number");
 
@@ -28,4 +26,38 @@ clickBtn.addEventListener('click',()=>{
 })
 </script>
 </body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <input type="text" id="user-txt">
+    <button id="btn">Click</button>
+    <div id="output"></div>
+    <script>
+      const userTxt = document.querySelector("#user-txt");
+      const btn =document.querySelector("#btn");
+      const output = document.querySelector("#output");
+
+      userTxt.addEventListener('input',()=>{
+        let userValue = userTxt.value;
+        output.innerText = userValue
+        if(userValue.length%2 === 0){
+          output.style.color = "green";
+        }else{
+          output.style.color = "red";
+        }
+      })
+
+
+    </script>
+  </body>
 </html>
