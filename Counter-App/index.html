@@ -9,5 +9,30 @@
   <p id="count">0</p>
 	<button id="increment">Increment</button>
   <button id="decrement">Decrement</button>
+
+<script>
+
+  const countValue = document.querySelector('#count');
+  const increment = document.querySelector('#increment');
+  const decrement = document.querySelector('#decrement');
+
+  let count = 0;
+
+  increment.addEventListener('click',()=>{
+    count++;
+    countValue.innerText = count;
+  })
+  decrement.addEventListener('click',()=>{
+    if(count <= 0){
+     count = 0;
+    }else{
+      count--;
+    countValue.innerText = count;
+    }
+
+  })
+
+
+</script>
 </body>
 </html>
