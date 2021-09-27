@@ -6,6 +6,31 @@
   <title>Document</title>
 </head>
 <body>
-  
+  <h2>Hello JavaScript</h2>
+
+<script>
+  function checkNumber(){
+    let positive = 0;
+    let negative = 0;
+    let zero = 0;
+
+    for(let i = 0; i < 10; i++){
+      let number = prompt("Enter the Number");
+      number = Number(number);
+      if(number > 0){
+        positive++;
+      }else if(number < 0){
+        negative++;
+      }else{
+        zero++;
+      }
+    }
+    console.log(positive);
+    console.log(negative);
+    console.log(zero);
+
+
+  }
+</script>
 </body>
 </html>
