@@ -24,14 +24,16 @@
             if(lengths >= 10){
                 output.innerText = "Success"
                 inputTxt.style.border = "1px solid green"
+                inputTxt.style.color = "green"
             }else{
                 output.innerText = 'Sorry!! The Password length is to short'
                 inputTxt.style.border = "1px solid red"
+                inputTxt.style.color - "red"
                 checkBtn.disabled = true;
             }
            
         }
-        checkBtn.addEventListener('click', passwordChecker);
+        inputTxt.addEventListener('input', passwordChecker);
     </script>
 </body>
 </html>
