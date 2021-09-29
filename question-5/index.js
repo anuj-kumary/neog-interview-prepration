@@ -127,3 +127,36 @@ for(let i = 0; i < 5; i++){
 
 comapareValues(studentList);
 studentAverage(studentList)
+
+
+let studentList = [];
+
+for(let i = 0; i < 2; i++){
+  let name = readlineSync.question("Enter Your name ");
+  let ut = readlineSync.question("Enter the unit test marks ");
+  let preFinal = readlineSync.question("Enter the pre final marks ");
+  let finalMark = readlineSync.question("Enter the final marks ");
+
+  let studentMarksObj = {
+    name : name,
+    unitTest : ut,
+    preFinalMarks : preFinal,
+    finalMarks : finalMark
+  }
+  studentList.push(studentMarksObj)
+}
+
+function getHigherMarks(studentList){
+  let sum = 0;
+  for(let j = 0; j < 2; j++){
+    // let AdditionMarks = Number(studentList[j].unitTest) + Number(studentList[j].preFinalMarks) + Number(studentList[j].finalMarks)
+
+    if(Number(studentList[j].unitTest) + Number(studentList[j].preFinalMarks) + Number(studentList[j].finalMarks) > sum){
+      sum = Number(studentList[j].unitTest) + Number(studentList[j].preFinalMarks) + Number(studentList[j].finalMarks)
+    } 
+    
+  }
+  console.log(sum)
+}
+
+getHigherMarks(studentList);
