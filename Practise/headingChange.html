@@ -11,5 +11,22 @@
 <button id="h2">h2</button>
 <button id="h3">h3</button>
 <div id="output"></div>
+
+<script>
+  const output = document.querySelector("#output");
+  const inputUSer = document.querySelector("#txt");
+  const h1 = document.querySelector("#h1");
+  const h2 = document.querySelector("#h2");
+  const h3 = document.querySelector("#h3");
+  h1.addEventListener('click', ()=>{
+    output.innerHTML = `<h1> ${inputUSer.value} </h1>`
+  })
+    h2.addEventListener('click', ()=>{
+    output.innerHTML = `<h1> ${inputUSer.value} </h1>`
+  })
+    h3.addEventListener('click', ()=>{
+    output.innerHTML = `<h1> ${inputUSer.value} </h1>`
+  })
+</script>
 </body>
 </html>
