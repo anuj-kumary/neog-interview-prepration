@@ -8,5 +8,27 @@
 <body>
   <input type="text" id="txt">
   <button id="check">Check!!</button>
+
+ <script>
+   const txt = document.querySelector("#txt");
+   const check = document.querySelector("#check");
+
+   check.addEventListener('click',()=>{
+      let txtValue = txt.value;
+      console.log(txtValue)
+      let splitString = txtValue.split("")
+      let reverseString = splitString.reverse()
+      let joinString = reverseString.join("")
+      console.log(joinString)
+      if(joinString === txtValue){
+      console.log("This is palindrome")
+      }
+      else
+      {
+      console.log("This is not a palindrome")
+  }
+   })
+ </script>
+
 </body>
 </html>
