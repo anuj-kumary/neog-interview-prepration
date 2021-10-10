@@ -6,6 +6,26 @@
   <title>Document</title>
 </head>
 <body>
-  
+
+  <input type="text" id="user-email">
+  <button id="validate">validate</button>
+  <div id="output"></div>
+
+  <script>
+    const userEmail = document.querySelector("#user-email");
+    const validateBtn = document.querySelector("#validate");
+    const output = document.querySelector("#output")
+
+    validateBtn.addEventListener('click', checkValidation);
+
+    function checkValidation(){
+      let userValue = userEmail.value;
+      if(userValue.includes("@")){
+        console.log("Emai id is correct");
+      }else{
+        console.log("Please Enter the correct email id")''
+      }
+    }
+  </script>
 </body>
 </html>
