@@ -6,6 +6,23 @@
   <title>Document</title>
 </head>
 <body>
-  
+
+  <button id="fetch-api">get API</button>
+
+<script>
+
+  const fetchApi = document.querySelector("#fetch-api");
+
+  fetchApi.addEventListener('click', getApi){
+  async function getApi(){
+  const url = await fetch("https://mystery-api.kushanksriraj.repl.co/get")
+  if(url.status === 404){
+    console.log("Page Not Found")
+  }
+
+}
+
+</script>
+
 </body>
 </html>
