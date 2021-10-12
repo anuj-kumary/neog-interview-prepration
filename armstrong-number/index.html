@@ -6,6 +6,27 @@
   <title>Document</title>
 </head>
 <body>
+
+  <script>
+  function getArmstrongNumber(){
+  let n = 153,r,temp,sum=0;
+  temp = n;
+  while(n>0){
+    r = parseInt(n % 10);
+    sum = sum + (r*r*r);
+    n =parseInt(n / 10);
+  }
+  console.log(sum)
+  if(temp == sum){
+    console.log("This is armstrong number");
+  }else{
+    console.log("This is not a armstrong number");
+  }
+  }
+  getArmstrongNumber()
   
+</script>
+  
+
 </body>
 </html>
