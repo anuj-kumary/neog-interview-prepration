@@ -6,10 +6,28 @@
     <title>Document</title>
   </head>
   <body>
-  
+    <input type="text" id="input-txt">
+    <button id="check">Check!!</button>
 
 
   <script>
+
+   const inputTxt = document.querySelector("#input-txt");
+   const checkBtn = document.querySelector("#check");
+   const output = document.querySelector("#output");
+
+   inputTxt.addEventListener('input',()=>{
+     let value = inputTxt.value
+     console.log(value)
+     if(value.length%3===0){
+       
+       inputTxt.style.color = "red";
+     }else{
+      
+       inputTxt.style.color = "black";
+     }
+   })
+   
   </script>
   </body>
   </html>
