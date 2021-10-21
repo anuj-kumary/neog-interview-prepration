@@ -10,5 +10,38 @@
   <button id="start">Start</button>
   <button id="stop">Stop</button>
   <div id="output"></div>
+
+<script>
+
+   const startBtn = document.querySelector("#start");
+  const stopBtn = document.querySelector("#stop");
+  const inputText = document.querySelector("#input-txt");
+  const output = document.querySelector("#output");
+
+  var timer;
+
+  function randomColor(){
+    var randomRed = Math.floor(Math.random()*256);
+    var randomGreen = Math.floor(Math.random()*256);
+    var randomBlue = Math.floor(Math.random()*256);
+
+    var color = `rgb(${randomRed},${randomGreen},${randomBlue})`
+    return color
+  }
+
+  startBtn.addEventListener('click', function(){
+    timer = setInterval(function(){
+    output.style.color = randomColor();
+},100)
+    output.innerHTML = inputText.value;
+    
+})
+
+  stopBtn.addEventListener('click',()=>{
+    clearInterval(timer)
+  })
+
+
+</script>
 </body>
 </html>
