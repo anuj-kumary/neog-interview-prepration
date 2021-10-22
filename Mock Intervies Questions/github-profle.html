@@ -1,11 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
 </head>
+
 <body>
-  
+
+	<body>
+		<input type="text" id="username">
+  <button id="get-image">Get image</button>
+  <div id="output"></div>
+
+  <script>
+    const user = document.querySelector("#username");
+    const getImage = document.querySelector("#get-image");
+    const output = document.querySelector("#output");
+
+    function getImages(){
+      fetch(`https://api.github.com/users/${user.value}`)
+      .then(response => response.json())
+      .then(data => {
+        let profileUrl = data.avatar_url
+        const imageElement = document.createElement("img");
+        imageElement.src = profileUrl
+        output.appendChild(imageElement)
+        console.log(profileUrl)
+      })
+      .catch(err => console.log(err))
+    }
+
+    getImage.addEventListener("click",getImages)
+  </script>
 </body>
 </html>
