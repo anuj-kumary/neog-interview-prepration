@@ -6,6 +6,39 @@
   <title>Document</title>
 </head>
 <body>
+  <button id="yjhd">yjhd</button>
+  <button id="znmd">znmd</button>
+  <div id="output"></div>
+
+  <script>
+
+  const znmd = document.querySelector("#znmd");
+  const yjhd = document.querySelector("#yjhd");
+  const output = document.querySelector("#output");
+
+  let znmdBtn = znmd.innerText;
+  let yjhdBtn = yjhd.innerText;
+
+  let url = "https://mock-practice.prakhar10v.repl.co/bollywood?name=";
+
+  function apiTest(name){
+    let apiUrl = url+name;
+    fetch(apiUrl)
+    .then(response => response.json())
+    .then(data => {
+      console.log(data.message)
+      output.innerText = data.message
+    })
+    .catch(err => console.log(err))
+  }
+
+  znmd.addEventListener('click',()=>{
+    apiTest(znmdBtn)
+  })
+  yjhd.addEventListener('click',()=>{
+    apiTest(yjhdBtn)
+  })
   
+</script>
 </body>
 </html>
