@@ -1,15 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  
-  <input type="text" id="input-txt">
-  <button id="check">check</button>
 
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+
+	<input type="text" id="input-txt">
+  <button id="check">check</button>
+  
+  <script>
+const inputTxt = document.querySelector("#input-txt");
+const chechBtn = document.querySelector("#check")
+
+  chechBtn.addEventListener("click",()=>{
+    let userValue = inputTxt.value
+    if(userValue === "Tanay"){
+      console.log("He is our funny mentor")
+    }
+     if(userValue === "Tanvi"){
+      console.log("She is the best CEO")
+    }
+     if(userValue === "Akanksha"){
+      console.log("She is our CHEERFUL Interviewer")
+    }
+     if(userValue === "Swapnil"){
+      console.log("He help us CONQUER jobs")
+    }
+  })
+
+</script>
 
 </body>
 </html>
