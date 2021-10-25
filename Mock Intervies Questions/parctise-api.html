@@ -1,11 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
 </head>
+
 <body>
+	<button id="fectch-data">Fetch Data</button>
+  <div id="output"></div>
+
+    <script>
+    const btnClick = document.querySelector("#click")
+    const output = document.querySelector("#output")
+
+    let price = 0;
+    let itemName ="";
+
+    click.addEventListener("click",()=>{
+      fetch("https://mock-practice.prakhar10v.repl.co/items")
+      .then(response => response.json())
+      .then(data => {
+        data.filter(item =>{
+        if(item.price > price){
+          price = item.price
+          itemName=item.item
+        } 
+        })
+        output.innerText = `Item Name ${itemName} and price is ${price}`
+        })
+      
+    })
+  </script>
   
 </body>
 </html>
