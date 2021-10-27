@@ -7,7 +7,36 @@
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
+<input id='first-number' >
+    <input id='second-number' >
+    <p></p>>
+    <script>
+      const firstNumber = document.querySelector('#first-number')
+const output = document.querySelector('p')
+      const secondNumber = document.querySelector('#second-number')
 
+   function checkhighestNumber(){
+     let firstValue = Number(firstNumber.value);
+let secondValue = Number(secondNumber.value);
+
+     if(firstValue === ''){
+       output.innerHtml = 'Please enter number'
+     }else if(secondValue === ''){
+       output.innerHtml = 'Please emter the second Number'
+     }else if (firstValue > secondValue){
+       output.innerHtml = 'first number is grether'
+     }
+     else{
+       output.innerHtml = 'second number is higher'
+     }
+
+     
+   }
+
+firstNumber.addEventListener('input',checkhighestNumber)   
+
+secondNumber.addEventListener('input',checkhighestNumber)
+    </script>
 
 </body>
 </html>
