@@ -6,10 +6,29 @@
   <title>Document</title>
 </head>
 <body>
+  <input type="text" id="stock-price">
+  <input type="text" id="current-price">
+  <button id="check-btn">Check</button>
 
-  
 <script>
 
+  const currentPrice = document.querySelector("#current-price");
+  const stockPrice = document.querySelector("#stock-price");
+  const checkBtn = document.querySelector("#check-btn")
+
+
+  function stockProfitOrLoss(cp,sp){
+   if(cp>sp){
+     console.log("Profit")
+   }else{
+     console.log("loss")
+   }
+  }
+
+  checkBtn.addEventListener("click", ()=>{
+    stockProfitOrLoss(Number(currentPrice.value),Number(stockPrice.value))
+  })
+  
 </script>
 </body>
 </html>
