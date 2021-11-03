@@ -3,6 +3,23 @@
 <title>OTP Verification</title>
 </head>
   <body>
-    
+  <input type="text" id="text">
+  <button id="get-api">API</button>
+
+<script>
+  const inputText = document.querySelector('#text')
+  const getApi = document.querySelector("#get-api");
+
+  getApi.addEventListener("click",()=>{
+    let url = "https://otpgenerator.ishanjirety.repl.co/get-otp?name="
+    let name = inputText.value
+    fetch(url+name)
+    .then(response => response.json())
+    .then(data => {
+      console.log(data.otp)
+
+    })
+  })
+</script>
   </body>
 </html>
