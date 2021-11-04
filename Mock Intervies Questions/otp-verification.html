@@ -4,11 +4,16 @@
 </head>
   <body>
   <input type="text" id="text">
+  <input type="text" id="input-otp">
   <button id="get-api">API</button>
+  <button id="validate-btn">Validate</button>
 
 <script>
   const inputText = document.querySelector('#text')
   const getApi = document.querySelector("#get-api");
+  const inputOtp = document.querySelector("#input-otp");
+  const output = document.querySelector("#output");
+  const validateBtn = document.querySelector("#validate-btn")
 
   getApi.addEventListener("click",()=>{
     let url = "https://otpgenerator.ishanjirety.repl.co/get-otp?name="
@@ -16,9 +21,18 @@
     fetch(url+name)
     .then(response => response.json())
     .then(data => {
-      console.log(data.otp)
-
+      output.innerText = data.otp
     })
+  })
+
+  validateBtn.addEventListener('click',()=>{
+    let otp = inputOtp.value
+      if(output.innerText === otp){
+        console.log("Hurray you your otp is correct")
+      }
+      else{
+        console.log("Wrong otp")
+      }
   })
 </script>
   </body>
