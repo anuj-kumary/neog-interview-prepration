@@ -6,6 +6,28 @@
   <title>Document</title>
 </head>
 <body>
-  
+  <input type="text" id="number">
+  <button id="check">Check</button>
+
+  <script>
+  const inputTxt = document.querySelector("#number")
+  const checkBtn = document.querySelector("#check")
+
+  function amorphicNumberOrNot(){
+    let number = inputTxt.value
+    let squareOfNumber = number*number
+    console.log(number)
+    console.log(squareOfNumber)
+
+    if(number%10!==squareOfNumber%10){
+      console.log(`${number} is not a automorphic Number`)
+    }else{
+      console.log(`${number} is a automorphic Number`)
+    }
+
+  }
+
+  checkBtn.addEventListener("click",amorphicNumberOrNot)
+</script>
 </body>
 </html>
