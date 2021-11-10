@@ -6,6 +6,26 @@
   <title>Document</title>
 </head>
 <body>
-  
+   <input type="text" id="input-txt">
+  <button id="check">Check</button>
+
+  <script>
+    const userText = document.querySelector("#input-txt");
+    const checkBtn = document.querySelector("#check")
+    
+    let vowels = ["a","e","i","o","u"]
+    checkBtn.addEventListener('click', function(){
+      let count =0;
+      let text = userText.value
+      for(let i=0;i<text.length;i++){
+        for(let j=0;j<vowels.length;j++){
+          if(text[i].includes(vowels[j])){
+              count++
+          }
+        }
+      }
+      console.log(count)
+    })
+  </script>
 </body>
 </html>
