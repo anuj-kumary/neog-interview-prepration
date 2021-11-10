@@ -6,12 +6,15 @@
   <title>Document</title>
 </head>
 <body>
-   <input type="text" id="input-txt">
+  <input type="text" id="input-txt">
   <button id="check">Check</button>
+  <div id="output"></div>
+
 
   <script>
     const userText = document.querySelector("#input-txt");
     const checkBtn = document.querySelector("#check")
+    const output = document.querySelector("#output")
     
     let vowels = ["a","e","i","o","u"]
     checkBtn.addEventListener('click', function(){
@@ -24,7 +27,7 @@
           }
         }
       }
-      console.log(count)
+  output.innerText = `Vowels are ${count} and consonent ${text.length-count}`
     })
   </script>
 </body>
